@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 29
@@ -23,15 +26,56 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+    // work-runtime-ktx 2.1.0 and above now requires Java 8
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "androidx.appcompat:appcompat:$appCompat_version"
+    implementation "androidx.core:core-ktx:$ktx_ersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_extensions_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_ktx_version"
+
+    implementation "com.google.android.material:material:$material_version"
+    // viewpager2
+    implementation "androidx.viewpager2:viewpager2:$viewpager2_version"
+    // navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    //Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+    def dataDependencies = rootProject.ext.dataDependencies
+    //Retrofit2
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitConverter
+    implementation dataDependencies.retrofitCoroutinesAdapter
+    //Room
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    implementation dataDependencies.roomRuntime
+    implementation dataDependencies.roomKtx
+    implementation dataDependencies.runtimeKtx
+
+    def generalTestDependencies = rootProject.ext.generalTestDependencies
+    testImplementation generalTestDependencies.mockito,
+            generalTestDependencies.junit,
+            generalTestDependencies.mockitoInline,
+            generalTestDependencies.kotlinTest,
+            generalTestDependencies.mockitoKotlin
+
+    testImplementation "android.arch.core:core-testing:$arch_test_version"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2'
+    testImplementation 'com.jraska.livedata:testing-ktx:1.1.0'
 }
