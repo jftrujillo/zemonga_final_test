@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_navigator"
+    app:startDestination="@id/homeViewPagerFragment">
+    <fragment
+        android:id="@+id/homeViewPagerFragment"
+        android:name="com.example.zemongatest.presentation.fragment.HomeViewPagerFragment"
+        android:label="fragment_home_view_pager"
+        tools:layout="@layout/fragment_home_view_pager">
+        <action
+            android:id="@+id/action_homeViewPagerFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.example.zemongatest.presentation.fragment.PostDetailFragment"
+        android:label="fragment_post_detail"
+        tools:layout="@layout/fragment_post_detail">
+        <argument
+            android:name="postId"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="userId"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+</navigation>

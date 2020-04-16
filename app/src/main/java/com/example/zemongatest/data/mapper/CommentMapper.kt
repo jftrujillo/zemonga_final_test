@@ -12,5 +12,5 @@ class CommentMapper : BaseMapper<CommentResponse, CommentEntity, Comment> {
         CommentEntity(service.commentId, service.postId, service.body)
 
     override fun transformEntityToPresentation(entity: CommentEntity) =
-        Comment(entity.commentId, entity.postId, entity.body.capitalize())
+        Comment(entity.commentId, entity.postId, entity.body)
 }

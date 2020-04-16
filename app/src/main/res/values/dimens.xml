@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="delete_post_margin">24dp</dimen>
+    <dimen name="post_item_margin">16dp</dimen>
+    <dimen name="post_title_item_margin">8dp</dimen>
+    <dimen name="favorite_post_margin">8dp</dimen>
+    <dimen name="margin_description_detail">8dp</dimen>
+    <dimen name="margin_body_detail">12dp</dimen>
+    <dimen name="margin_user_detail">12dp</dimen>
+    <dimen name="margin_comments">10dp</dimen>
+</resources>

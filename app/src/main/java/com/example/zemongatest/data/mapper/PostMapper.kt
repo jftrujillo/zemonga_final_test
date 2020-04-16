@@ -19,7 +19,7 @@ class PostMapper : BaseMapper<PostResponse, PostEntity, Post> {
             entity.idPost,
             entity.userId,
             entity.title,
-            entity.body.capitalize(),
+            entity.body,
             entity.wasRead,
             entity.isFavorite
         )

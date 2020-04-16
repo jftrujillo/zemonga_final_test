@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ZemongaTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_title">Zemonga demo</string>
+    <string name="tap_all_post">all post</string>
+    <string name="tap_favorite">favorite post</string>
+    <string name="refresh_string">actualizar</string>
+    <string name="remove_favorite">remover de favoritos</string>
+    <string name="add_favorite">agregar a favoritops</string>
+    <string name="description_title_detail">description</string>
+    <string name="user_title_detail">user</string>
+    <string name="comments_title_detail">comments</string>
+
+    <string name="user_details_name">Name: %s </string>
+    <string name="user_details_email">Email: %s </string>
+    <string name="user_details_phone">Phone: %s </string>
+    <string name="user_details_website">Website: %s </string>
 </resources>

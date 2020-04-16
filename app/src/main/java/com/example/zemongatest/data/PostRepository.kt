@@ -13,4 +13,5 @@ interface PostRepository {
     suspend fun updatePost(wasRead: Boolean, idPost: Int)
     suspend fun favPost(isFavorite: Boolean, idPost: Int)
     suspend fun fetchAllPost(): List<PostEntity>
+    suspend fun deleteByIdPost(idPost: Int)
 }

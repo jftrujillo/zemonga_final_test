@@ -8,6 +8,8 @@ import com.example.zemongatest.data.database.entitity.PostEntity
 import com.example.zemongatest.data.mapper.PostMapper
 import com.example.zemongatest.data.network.retrofit.JsonPlaceHolderApi
 import com.example.zemongatest.domain.model.Post
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class PostRepositoryImpl(
     private val postDao: PostDao,
@@ -56,5 +58,9 @@ class PostRepositoryImpl(
         return jsonPlaceHolderApi.getAllPostRequest().map {
             postMapper.transformResponseToEntity(it)
         }
+    }
+
+    override suspend fun deleteByIdPost(idPost: Int) = withContext(Dispatchers.IO) {
+        postDao.deleteByIdPost(idPost)
     }
 }

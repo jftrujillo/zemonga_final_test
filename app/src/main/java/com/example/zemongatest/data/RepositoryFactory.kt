@@ -43,12 +43,13 @@ class RepositoryFactory {
                     ).also { userRepositoryInstance = it }
             }
 
-        fun getCommentRepositoryInstance(commentDao: CommentDao, mapper: CommentMapper) =
+        fun getCommentRepositoryInstance(commentDao: CommentDao, mapper: CommentMapper, jsonPlaceHolderApi: JsonPlaceHolderApi) =
             commentRepositoryInstance ?: synchronized(this) {
                 commentRepositoryInstance
                     ?: CommentRepositoryImpl(
                         commentDao,
-                        mapper
+                        mapper,
+                        jsonPlaceHolderApi
                     ).also { commentRepositoryInstance = it }
             }
     }
