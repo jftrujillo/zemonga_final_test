@@ -1,7 +1,7 @@
 # zemonga tecnical test by Jhon Trujillo
 zemonga final test
 
-##Getting started
+## Getting started
 This app bring post from an api server and show it using some rules defined by zemonga tecnical test.
 the api works with this endpoint 
 
@@ -12,7 +12,7 @@ the api works with this endpoint
 At the moment the database is created, the 'SyncDataWorker' worker is trigger and in that point all the records are downloaded and 
 save it into the database.
 
-##Architecture patterns
+## Architecture patterns
 
 This app try to use the clean architeture aproach to create three decoupled layers, each one with a funtion. 
 
