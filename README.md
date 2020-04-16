@@ -42,7 +42,7 @@ So, at the end, we have this implementation.
 ## Libraries
 * [Room](https://developer.android.com/jetpack/androidx/releases/room)
 * [Workout manager](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/coroutineworker)
-* [Navigation Component]https://developer.android.com/guide/navigation/navigation-getting-started)
+* [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started)
 * [ViewPager2](https://developer.android.com/jetpack/androidx/releases/viewpager2) 
 * [Data Binding](https://developer.android.com/topic/libraries/data-binding) 
 * [Retrofit2](https://square.github.io/retrofit/)
