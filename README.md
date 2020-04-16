@@ -1,6 +1,9 @@
 # zemonga tecnical test by Jhon Trujillo
 zemonga final test
 
+![How it looks](https://github.com/jftrujillo/zemonga_final_test/blob/master/images/zemonga.gif)
+
+
 ## Getting started
 This app bring post from an api server and show it using some rules defined by zemonga tecnical test.
 the api works with this endpoint 
@@ -16,7 +19,7 @@ save it into the database.
 
 This app try to use the clean architeture aproach to create three decoupled layers, each one with a funtion. 
 
-put image here 
+![clean architecture](https://github.com/jftrujillo/zemonga_final_test/blob/master/images/clean.jpg)
 
 So, you have three layers
 
@@ -36,6 +39,8 @@ For the presentation layer, we are using MVVM
 * [MVVM](https://developer.android.com/topic/libraries/architecture/viewmodel)
 
 So, at the end, we have this implementation.
+
+![implementation](https://github.com/jftrujillo/zemonga_final_test/blob/master/images/Archictecture.PNG)
 
 
 
